@@ -1,0 +1,25 @@
+name: Vue CLI
+
+on: [push]
+
+jobs:
+  CI:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: npm install
+      name: Install dependencies
+    - run: npm run lint
+      name: Lint code
+    - run: npm run build --if-present
+      name: Build application
+    - run: npm test
+      name: Run tests
+      env:
+        CI: true
