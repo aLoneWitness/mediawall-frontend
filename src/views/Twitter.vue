@@ -10,7 +10,7 @@
 import { Tweet } from 'vue-tweet-embed'
 
 export default {
-  name: "twitter",
+  name: "Twitter",
   components: {
     Tweet,
   }

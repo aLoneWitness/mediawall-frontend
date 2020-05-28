@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Twitter from '../views/twitter.vue'
-import Instagram from '../views/instagram.vue'
-import Youtube from '../views/youtube.vue'
+import Twitter from '../views/Twitter'
+import Youtube from '../views/Youtube'
+import Instagram from '../views/Instagram'
 
 Vue.use(VueRouter)
 
@@ -16,26 +16,17 @@ Vue.use(VueRouter)
   {
     path: '/twitter',
     name: 'Twitter',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/twitter.vue')
+    component: Twitter
   },
   {
     path: '/instagram',
     name: 'Instagram',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/instagram.vue')
+    component: Instagram
   },
   {
     path: '/youtube',
     name: 'Youtube',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/youtube.vue')
+    component: Youtube
   }
 ]
 

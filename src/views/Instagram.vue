@@ -10,7 +10,7 @@
 import InstagramEmbed from 'vue-instagram-embed'
 
 export default {
-  name: "instagram",
+  name: "Instagram",
   components: {
     InstagramEmbed
   }
