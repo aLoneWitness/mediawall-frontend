@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Satisfying video here.</h2>
+    <h2 class="text">Satisfying video</h2>
   </div>
 </template>
 
@@ -17,5 +17,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  .text {
+    font-size: 300px;
+  }
 </style>

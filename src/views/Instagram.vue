@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>Instagram element here!</h2>
+  <div class="head">
+    <h2 class="text">Instagram element</h2>
   </div>
 </template>
 
@@ -18,3 +18,15 @@
     }
   }
 </script>
+
+<style scoped>
+  .head {
+    transition: background 6s ease;
+    background-color: blueviolet;
+    height: 100vh;
+    width: 100vw;
+  }
+  .text {
+    font-size: 300px;
+  }
+</style>
