@@ -5,6 +5,8 @@
 </template>
 
 <script>
+  import SockJS from "sockjs-client";
+  import Stomp from "webstomp-client";
 export default {
   name: 'App',
   components: {
@@ -13,9 +15,39 @@ export default {
     tweets: Object
   },
   methods: {
-    async updateTwitterFeed() {
-      
+
+  },
+  data() {
+    return {
+      connected: false
     }
+  },
+  mounted() {
+    this.socket = new SockJS("http://localhost:8080/ws")
+    this.stompClient = Stomp.over(this.socket);
+    this.stompClient.connect({}, frame => {
+              this.connected = true;
+              console.log(frame);
+              this.stompClient.subscribe("/topic/website", tick => {
+                let object  = JSON.parse(tick.body);
+                console.log(object)
+                switch (object.triggerType) {
+                  case "TWITTER":
+                    this.$router.push("Twitter")
+                    break;
+                  case "INSTAGRAM":
+                    this.$router.push("/instagram")
+                    break;
+                  case "VIDEO":
+                    this.$router.push("Youtube")
+                    break;
+                }
+              });
+            },
+            error => {
+              console.log(error);
+              this.connected = false;
+            })
   }
 }
 </script>

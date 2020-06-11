@@ -1,18 +1,20 @@
 <template>
-  <div class="instagram">
-
-    <instagram-embed :url=" 'https://www.instagram.com/p/CACeYr6pjpM/' " error-message="This post could not be loaded" :max-width="500"/>
-
+  <div>
+    <h2>Instagram element here!</h2>
   </div>
 </template>
 
 <script>
-import InstagramEmbed from 'vue-instagram-embed'
 
-export default {
-  name: "Instagram",
-  components: {
-    InstagramEmbed
+  export default {
+    name: "Instagram",
+    mounted() {
+      setTimeout(this.goBack, 5000)
+    },
+    methods: {
+      goBack(){
+        this.$router.push("/")
+      }
+    }
   }
-}
 </script>

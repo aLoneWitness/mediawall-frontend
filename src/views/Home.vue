@@ -1,18 +1,16 @@
 <template>
   <div>
-    <Timeline id="fontys" sourceType="profile" :options="{ tweetLimit: '3' }"/>
+    <h2>Satisfying video here.</h2>
   </div>
 </template>
 
 <script>
-  import { Timeline } from 'vue-tweet-embed'
   export default {
     name: 'Home',
     mounted() {
 
     },
     components: {
-      Timeline
     }
   }
 </script>
